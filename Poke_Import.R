@@ -178,7 +178,7 @@ pokemon_df5 <- pokemon_df4 |>
   ) |>
   filter(id <= 1025)
 
-pokemon_rankings <- readRDS("C:/Users/evrho/OneDrive/Documents/_School/Fall 2025/611/BIOS611_Project/Ranked_Mons.rds") |>
+pokemon_rankings <- readRDS("Ranked_Mons.rds") |>
   mutate(name = 
            sapply(name, function(x) paste(strsplit(x, "\\s+")[[1]], collapse = "-")))
 
