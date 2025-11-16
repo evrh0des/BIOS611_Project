@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Ensure rmarkdown is installed
-RUN R -e "install.packages('rmarkdown')"
+RUN R -e "install.packages('rmarkdown', 'xml2', 'rvest')"
 
 # Volume mount for project files
 VOLUME ["/work"]
