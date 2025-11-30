@@ -120,7 +120,6 @@ mod3_cor <- cor(test$rank, mod3_pred, method = "spearman")
 
 importance_df <- as.data.frame(importance(mod3))
 importance_df$Feature <- rownames(importance_df)
-importance_df[order(-importance_df$`%IncMSE`), ]
 importance_df <- importance_df[order(importance_df$`%IncMSE`, decreasing = TRUE), ]
 
 implot <- ggplot(importance_df, aes(x = reorder(Feature, `%IncMSE`), y = `%IncMSE`)) +
