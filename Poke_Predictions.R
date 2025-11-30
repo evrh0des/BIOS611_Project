@@ -142,8 +142,6 @@ lasso_coef <- coef(mod2)
 dropped_features <- rownames(lasso_coef)[lasso_coef[, 1] == 0]
 dropped_features <- dropped_features[dropped_features != "(Intercept)"]
 dropped_features_str <- paste(dropped_features, collapse = ", ")
-dropped_features
-dropped_features_str
 
 summary_table <- data.frame(
   Model = c("General Linear Model", "Lasso Regression", "Random Forest"),
