@@ -36,5 +36,5 @@ BIOS611_Report.pdf: Poke_Report.Rmd \
 	RF_Importance_Plot.jpg \
 	Stat_Vplots.jpg \
 	PCA_BabLeg.jpg \
-	PCA_Roles.jpg \
+	PCA_Roles.jpg
 	Rscript -e "rmarkdown::render('Poke_Report.Rmd', output_file = 'BIOS611_Report.pdf')"
