@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Ensure rmarkdown is installed
-RUN R -e "install.packages(c('rmarkdown', 'xml2', 'rvest', 'httr', 'jsonlite', 'ggrepel', 'glmnet', 'randomForest'))"
+RUN R -e "install.packages(c('rmarkdown', 'xml2', 'rvest', 'httr', 'jsonlite', 'ggrepel', 'glmnet', 'randomForest', 'knitr'))"
 
 # Volume mount for project files
 VOLUME ["/work"]

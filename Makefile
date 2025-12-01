@@ -4,7 +4,8 @@
 clean:
 	rm -f Ranked_Mons.rds Analysis_DF.rds \
 		Stat_Vplots.jpg PCA_BabLeg.jpg PCA_Roles.jpg \
-		RF_Importance_Plot.jpg Model_Comparisons.rds
+		RF_Importance_Plot.jpg Model_Comparisons.rds \
+		BIOS611_Report.pdf
 
 # Default target
 all: report
@@ -12,7 +13,8 @@ all: report
 # Build the output
 report: clean Ranked_Mons.rds Analysis_DF.rds \
 	Stat_Vplots.jpg PCA_BabLeg.jpg PCA_Roles.jpg \
-	RF_Importance_Plot.jpg Model_Comparisons.rds
+	RF_Importance_Plot.jpg Model_Comparisons.rds \
+	BIOS611_Report.pdf
 
 # Create Ranked_Mons.rds from Poke_Rankings.R
 Ranked_Mons.rds: Poke_Rankings.R
@@ -28,3 +30,11 @@ Stat_Vplots.jpg PCA_BabLeg.jpg PCA_Roles.jpg: Poke_PCA.R Analysis_DF.rds
 
 RF_Importance_Plot.jpg Model_Comparisons.rds: Poke_Predictions.R Analysis_DF.rds
 	Rscript Poke_Predictions.R
+
+BIOS611_Report.pdf: Poke_Report.Rmd \
+	Model_Comparisons.rds \
+	RF_Importance_Plot.jpg \
+	Stat_Vplots.jpg \
+	PCA_BabLeg.jpg \
+	PCA_Roles.jpg \
+	Rscript -e "rmarkdown::render('Poke_Report.Rmd', output_file = 'BIOS611_Report.pdf')"
