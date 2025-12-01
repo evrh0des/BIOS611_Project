@@ -6,4 +6,19 @@ The exploratory analyses aim to describe different trends in Pokemon popularity 
 
 ## Data Sources
 
+The 'Poke_Rankings.R' file scrapes Pokemon popularity rankings from a week-long voting initiative with over 1.5 million responses, stored at this URL: 
 
+https://thomasgamedocs.com/pokemon/
+
+The 'Poke_Import.R' file connects to PokeAPI to draw all other data. PokeAPI can be accessed at the link below, with detailed documentation in the following links: 
+
+https://pokeapi.co/
+https://pokeapi.co/about
+https://pokeapi.co/docs/v2#info
+
+See the generated 'BIOS611_Report.pdf' file at the end of the Make pipeline to review selected features from PokeAPI and additional descriptions of the collected rankings data.
+
+## Instructions to Generate Final Report
+
+1. Initiate Windows PowerShell or another terminal of your choice and change to a working directory. Moving forward through the instructions, <WD> will refer to the path of your working directory.
+2. Test
